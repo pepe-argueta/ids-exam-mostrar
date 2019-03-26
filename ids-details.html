@@ -1,0 +1,41 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="ids-details">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+        <h1>Details {{view}}</h1>
+        <template is="dom-if" if="{{list}}">
+            Lista
+        </template>
+        <template is="dom-if" if="{{table}}">
+            Tabla
+        </template>
+
+    </template>
+
+    <script>
+        /**
+         * `ids-details`
+         * 
+         *
+         * @customElement
+         * @polymer
+         * @demo demo/index.html
+         */
+        class IdsDetails extends Polymer.Element {
+            static get is() {
+                return 'ids-details';
+            }
+
+            constructor() {
+                super();
+            }
+        }
+
+        window.customElements.define(IdsDetails.is, IdsDetails);
+    </script>
+</dom-module>

@@ -1,0 +1,58 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="ids-buttons">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h1>Componente Mostrar</h1>
+    <h2>Da clic en un Botón</h2>
+
+    <button on-click="visible1">Mostrar Lista</button>
+    <button on-click="visible2">Mostrar Tabla</button>
+  </template>
+
+  <script>
+    /**
+     * `ids-buttons`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class IdsButtons extends Polymer.Element {
+      static get is() {
+        return 'ids-buttons';
+      }
+      
+      constructor() {
+        super();
+      }
+
+      visible1() {
+        let action = this.dispatchEvent(new CustomEvent('onClickIdsButton', {
+          detail: {
+            button: 'list'
+          },
+          bubbles: true,
+          composed: true
+        }));
+      }
+
+      visible2() {
+        let action = this.dispatchEvent(new CustomEvent('onClickIdsButton', {
+          detail: {
+            button: 'table'
+          },
+          bubbles: true,
+          composed: true
+        }));
+      }
+    }
+
+    window.customElements.define(IdsButtons.is, IdsButtons);
+  </script>
+</dom-module>
