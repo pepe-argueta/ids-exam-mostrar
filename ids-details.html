@@ -7,12 +7,30 @@
                 display: block;
             }
         </style>
-        <h1>Details {{view}}</h1>
         <template is="dom-if" if="{{list}}">
-            Lista
+            <ul>
+                <li>Nombre: <b>Jose</b></li>
+                <li>Edad: <b>31</b></li>
+                <li>Telefono: <b>556655665</b></li>
+            </ul>
         </template>
         <template is="dom-if" if="{{table}}">
-            Tabla
+            <table>
+                <thead>
+                    <tr>
+                        <td>Nombre:</td>
+                        <td>Edad: </td>
+                        <td>Telefono:</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jose Argueta</td>
+                        <td>31</td>
+                        <td>556655665</td>
+                    </tr>
+                </tbody>
+            </table>
         </template>
 
     </template>
